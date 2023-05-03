@@ -35,7 +35,6 @@ void main() {
     test('should return a JSON map conteining the proper data', () async {
       final result = tNumberTriviaModel.toJson();
       final expectedMap = {'text': 'test text', 'number': 1};
-
       expect(result, expectedMap);
     });
   });
