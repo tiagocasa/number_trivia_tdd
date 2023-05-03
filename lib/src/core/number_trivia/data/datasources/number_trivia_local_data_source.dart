@@ -1,7 +1,8 @@
 import 'package:number_trivia/src/core/number_trivia/data/models/number_trivia_model.dart';
 
+import '../../domain/entities/number_trivia.dart';
+
 abstract class NumberTriviaLocalDataSource {
-  Future<NumberTriviaModel> getConcreteNumberTriviaCached(int number);
   Future<NumberTriviaModel> getRandomNumberTriviaCached();
-  Future<void> cacheNumberTrivia(NumberTriviaModel triviaToCache);
+  Future<void> cacheNumberTrivia(NumberTrivia triviaToCache);
 }
