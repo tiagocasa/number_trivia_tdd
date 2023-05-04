@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:number_trivia/src/core/number_trivia_module.dart';
 import 'package:realm/realm.dart';
-import 'package:number_trivia/src/shared/services/realm_config.dart';
+import 'package:number_trivia/src/shared/services/realm/realm_config.dart';
 
 class AppModule extends Module {
   @override
