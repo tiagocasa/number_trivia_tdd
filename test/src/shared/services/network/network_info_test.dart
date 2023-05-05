@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:number_trivia/src/shared/services/network_info.dart';
+import 'package:number_trivia/src/shared/services/network/network_info.dart';
 
 class MockDataConnectionChecker extends Mock implements DataConnectionChecker {}
 

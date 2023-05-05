@@ -8,7 +8,7 @@ import 'package:number_trivia/src/core/number_trivia/data/repositories/number_tr
 import 'package:number_trivia/src/core/number_trivia/domain/entities/number_trivia.dart';
 import 'package:number_trivia/src/shared/error/exceptions.dart';
 import 'package:number_trivia/src/shared/error/failures.dart';
-import 'package:number_trivia/src/shared/services/network_info.dart';
+import 'package:number_trivia/src/shared/services/network/network_info.dart';
 
 class MockRemoteDataSource extends Mock
     implements NumberTriviaRemoteDataSource {}

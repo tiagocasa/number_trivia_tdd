@@ -8,7 +8,7 @@ import 'package:number_trivia/src/core/number_trivia/domain/entities/number_triv
 import 'package:number_trivia/src/core/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:number_trivia/src/shared/error/exceptions.dart';
 import 'package:number_trivia/src/shared/error/failures.dart';
-import 'package:number_trivia/src/shared/services/network_info.dart';
+import 'package:number_trivia/src/shared/services/network/network_info.dart';
 
 // ignore: avoid_private_typedef_functions
 typedef _ConcreteOrRandomChosser = Future<NumberTrivia> Function();
