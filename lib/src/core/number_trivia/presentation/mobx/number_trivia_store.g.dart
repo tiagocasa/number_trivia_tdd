@@ -83,6 +83,16 @@ mixin _$NumberTriviaStore on NumberTriviaStoreBase, Store {
         .run(() => super.getConcreteNumberTrivia(numberString));
   }
 
+  late final _$getRandomNumberTriviaAsyncAction = AsyncAction(
+      'NumberTriviaStoreBase.getRandomNumberTrivia',
+      context: context);
+
+  @override
+  Future<void> getRandomNumberTrivia() {
+    return _$getRandomNumberTriviaAsyncAction
+        .run(() => super.getRandomNumberTrivia());
+  }
+
   @override
   String toString() {
     return '''

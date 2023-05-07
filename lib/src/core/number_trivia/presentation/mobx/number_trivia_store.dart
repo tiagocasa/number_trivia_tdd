@@ -15,16 +15,16 @@ abstract class NumberTriviaStoreBase with Store {
   NumberTriviaStoreBase(this.concrete, this.random, this.converter);
 
   @observable
-  late String numberString;
+  String numberString = '';
 
   @observable
-  late String triviaText;
+  String triviaText = 'BEM VINDO - OLÁ MUNDO';
 
   @observable
-  late int triviaNumber;
+  int triviaNumber = 0;
 
   @observable
-  late bool isLoading;
+  bool isLoading = false;
 
   @action
   Future<void> getConcreteNumberTrivia(String numberString) async {
@@ -34,19 +34,40 @@ abstract class NumberTriviaStoreBase with Store {
       (l) {
         triviaNumber = 0;
         triviaText = failureToMessage(l);
+        isLoading = false;
         return;
       },
       (r) async {
         final failureOrTrivia = await concrete(Params(number: r));
         failureOrTrivia.fold((l) {
           triviaText = failureToMessage(l);
+          isLoading = false;
           return;
         }, (r) {
           triviaText = r.text;
           triviaNumber = r.number;
+          isLoading = false;
+          return;
         });
       },
     );
+  }
+
+  @action
+  Future<void> getRandomNumberTrivia() async {
+    isLoading = true;
+
+    final failureOrTrivia = await random(NoParams());
+    failureOrTrivia.fold((l) {
+      triviaText = failureToMessage(l);
+      isLoading = false;
+      return;
+    }, (r) {
+      triviaText = r.text;
+      triviaNumber = r.number;
+      isLoading = false;
+      return;
+    });
   }
 
   String failureToMessage(Failure failure) {
