@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:number_trivia/src/core/number_trivia/presentation/pages/number_trivia_page.dart';
 import 'shared/themes/themes.dart';
 
 class AppWidget extends StatefulWidget {
@@ -22,9 +23,9 @@ class _AppWidgetState extends State<AppWidget> {
         return MaterialApp.router(
           title: 'Number Trivia',
           debugShowCheckedModeBanner: false,
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          themeMode: null, //configuration.themeMode,
+          // theme: lightTheme,
+          // darkTheme: darkTheme,
+          // themeMode: null, //configuration.themeMode,
           routerDelegate: Modular.routerDelegate,
           routeInformationParser: Modular.routeInformationParser,
         );
